@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Mone’s Café Herzlich – Café & Frühstück in Rheindalen</title>
+    <meta name="description" content="Entdecke Mone’s Café Herzlich in Mönchengladbach-Rheindalen – gemütliches Café mit Frühstück, hausgemachten Kuchen & herzlicher Atmosphäre. Jetzt Tisch reservieren!">
+    <meta name="keywords" content="Café Rheindalen, Frühstück Mönchengladbach, Kaffee & Kuchen Rheindalen, Frühstückscafé NRW, Café in der Nähe, Mone’s Café Herzlich">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Mone’s Café Herzlich">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Mone’s Café Herzlich – Genuss in Rheindalen">
+    <meta property="og:description" content="Komm vorbei auf einen Kaffee, leckeren Kuchen oder ein herzhaftes Frühstück. Wir freuen uns auf Dich!">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Fonts: Playfair Display (Headlines) & Lato (Text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Lucide Icons (via Script for lightweight usage) or FontAwesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-dark': '#4B3621',
+                        'coffee-med': '#8B5A2B',
+                        'cream-light': '#FAF3E0',
+                        'cream-dark': '#EED9C4',
+                        'accent-gold': '#D4A373',
+                        'soft-white': '#FEFEFA',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(75, 54, 33, 0.6), rgba(75, 54, 33, 0.4)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+
+     <!-- Custom Styles for Animations -->
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF3E0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8B5A2B;
+            border-radius: 5px;
+        }
+
+        /* Animation Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hover Effects */
+        .hover-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(75, 54, 33, 0.15);
+        }
+
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+        }
+    </style>
+
+    <!-- Schema.org Structured Data (Local SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Mone’s Café Herzlich",
+      "image": "https://images.unsplash.com/photo-1554118811-1e0d58224f24",
+      "telephone": "+49 2161 2997088",
+      "email": "info@mones-cafe-herzlich.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plektrudisstraße 4",
+        "addressLocality": "Mönchengladbach",
+        "addressRegion": "NRW",
+        "postalCode": "41179",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.1804, 
+        "longitude": 6.3639
+      },
+      "url": "https://mones-cafe-herzlich.de",
+      "priceRange": "€10-20",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "17:00"
+        }
+      ],
+      "servesCuisine": "Breakfast, Coffee, Cake",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "400"
+      }
+    }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-soft-white antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-3">
+        <img src="Bilder/logo/Mone’s Café Herzlich Logo.png" alt="Mone’s Café Herzlich" class="h-10 md:h-20 object-contain">
+    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-coffee-dark hover:text-accent-gold font-medium transition-colors">Über Uns</a>
+                    <a href="#menu" class="text-coffee-dark hover:text-accent-gold font-medium transition-colors">Speisekarte</a>
+                    <a href="#gallery" class="text-coffee-dark hover:text-accent-gold font-medium transition-colors">Ambiente</a>
+                    <a href="#reviews" class="text-coffee-dark hover:text-accent-gold font-medium transition-colors">Stimmen</a>
+                    <a href="#contact" class="bg-coffee-dark text-white px-5 py-2 rounded-full hover:bg-coffee-med transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Kontakt & Anfahrt
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-coffee-dark hover:text-accent-gold focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="md:hidden bg-white shadow-inner">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
+                <a href="#about" class="block px-3 py-2 text-coffee-dark hover:bg-cream-light hover:text-accent-gold rounded-md text-base font-medium">Über Uns</a>
+                <a href="#menu" class="block px-3 py-2 text-coffee-dark hover:bg-cream-light hover:text-accent-gold rounded-md text-base font-medium">Speisekarte</a>
+                <a href="#gallery" class="block px-3 py-2 text-coffee-dark hover:bg-cream-light hover:text-accent-gold rounded-md text-base font-medium">Ambiente</a>
+                <a href="#contact" class="block mt-4 px-5 py-3 bg-coffee-dark text-white rounded-full mx-4 hover:bg-coffee-med font-bold">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="Bilder/Hintergrund/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto space-y-6 reveal-on-scroll">
+            <p class="text-cream-light text-lg md:text-xl font-light tracking-widest uppercase mb-2">Willkommen in Rheindalen</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold text-white leading-tight drop-shadow-lg">
+                Mone’s Café <span class="text-accent-gold">Herzlich</span>
+            </h1>
+            <p class="text-gray-100 text-xl md:text-2xl font-light max-w-2xl mx-auto drop-shadow-md pb-4">
+                Herzlich genießen im Herzen von Rheindalen. <br>Hausgemachter Kuchen, frisches Frühstück & echte Gastfreundschaft.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+                <a href="#menu" class="px-8 py-3 bg-accent-gold text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-coffee-dark transition-all duration-300 transform hover:scale-105">
+                    Speisekarte ansehen
+                </a>
+                <a href="#contact" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-coffee-dark transition-all duration-300">
+                    Jetzt vorbeikommen
+                </a>
+            </div>
+        </div>
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white z-10">
+            <a href="#about"><i class="fas fa-chevron-down text-2xl"></i></a>
+        </div>
+    </header>
+
+    <!-- Über Uns -->
+    <section id="about" class="py-20 bg-soft-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Image Grid -->
+                <div class="w-full lg:w-1/2 relative reveal-on-scroll">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kaffeezubereitung" class="rounded-lg shadow-xl w-full h-64 object-cover transform translate-y-8">
+                        <img src="https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gemütliches Café Interieur" class="rounded-lg shadow-xl w-full h-64 object-cover">
+                    </div>
+                    <!-- Decorative Element -->
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-cream-light rounded-full -z-10 opacity-50"></div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 space-y-6 reveal-on-scroll">
+                    <span class="text-accent-gold font-bold tracking-wider uppercase text-sm">Unsere Philosophie</span>
+                    <h2 class="font-serif text-4xl text-coffee-dark font-bold">Mehr als nur Kaffee – ein Ort zum Wohlfühlen</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        In Mone’s Café Herzlich ist der Name Programm. Wir sind ein persönlich geführtes Café im Herzen von Mönchengladbach-Rheindalen, wo jeder Gast wie ein guter Freund begrüßt wird.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Ob für ein ausgiebiges Frühstück, eine entspannte Kaffeepause oder ein Stück unserer beliebten hausgemachten Torten – bei uns steht die Qualität und die Liebe zum Detail an erster Stelle. Genießen Sie die familiäre Stimmung drinnen oder bei schönem Wetter auf unseren Außenplätzen.
+                    </p>
+                    <div class="flex items-center gap-4 pt-4">
+                        <div class="text-center px-4 py-2 border border-cream-dark rounded-lg">
+                            <span class="block text-2xl font-serif text-coffee-dark font-bold">4.7</span>
+                            <span class="text-xs text-gray-500 uppercase">Google Sterne</span>
+                        </div>
+                        <div class="text-center px-4 py-2 border border-cream-dark rounded-lg">
+                            <span class="block text-2xl font-serif text-coffee-dark font-bold">400+</span>
+                            <span class="text-xs text-gray-500 uppercase">Bewertungen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speisekarte (Visual) -->
+    <section id="menu" class="py-20 bg-cream-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="font-serif text-4xl text-coffee-dark font-bold mb-4">Unser Angebot</h2>
+                <div class="h-1 w-24 bg-accent-gold mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Frisch zubereitet, mit Liebe serviert. Entdecken Sie unsere Frühstücksklassiker und süßen Verführungen.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Frühstück -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-card reveal-on-scroll">
+                    <div class="h-48 overflow-hidden">
+                        <img src="Bilder/Speisekarten/1.png" alt="Frühstücksteller" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-serif text-xl font-bold text-coffee-dark mb-2">Frühstück</h3>
+                        <p class="text-gray-600 text-sm mb-4">Vom klassischen Rührei über reichhaltige Frühstücksteller bis hin zu frischen Croissants.</p>
+                        <span class="text-accent-gold font-semibold text-sm">Täglich frisch</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Kaffee -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-card reveal-on-scroll" style="transition-delay: 100ms;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="Bilder/Speisekarten/Caffee.png" alt="Cappuccino" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-serif text-xl font-bold text-coffee-dark mb-2">Kaffee & Getränke</h3>
+                        <p class="text-gray-600 text-sm mb-4">Aromatischer Cappuccino, Latte Macchiato und ausgewählte Teesorten.</p>
+                        <span class="text-accent-gold font-semibold text-sm">Barista Qualität</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Kuchen -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-card reveal-on-scroll" style="transition-delay: 200ms;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="Bilder/Speisekarten/Kuchen1.png" alt="Kuchenstück" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-serif text-xl font-bold text-coffee-dark mb-2">Kuchen & Torten</h3>
+                        <p class="text-gray-600 text-sm mb-4">Große Auswahl an hausgemachten Torten und Kuchen. Auch auf Bestellung!</p>
+                        <span class="text-accent-gold font-semibold text-sm">Hausgemacht</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Waffeln & Süßes -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-card reveal-on-scroll" style="transition-delay: 300ms;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="Bilder/Speisekarten/süsigkeiten.png" alt="Waffeln" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-serif text-xl font-bold text-coffee-dark mb-2">Süße Sünden</h3>
+                        <p class="text-gray-600 text-sm mb-4">Frische Waffeln mit Kirschen, Sahne oder Eis sowie saisonale Leckereien.</p>
+                        <span class="text-accent-gold font-semibold text-sm">Seelentröster</span>
+                    </div>
+                </div>
+            </div>^
+
+            <!-- Speisekarte Großes Bild -->
+            <div class="mt-16 reveal-on-scroll">
+                <div class="text-center mb-8">
+                    <h3 class="font-serif text-2xl text-coffee-dark font-bold">Unsere vollständige Karte</h3>
+                    <p class="mt-2 text-gray-600">Hier finden Sie alle Gerichte und Preise im Überblick.</p>
+                </div>
+                <div class="max-w-5xl mx-auto bg-white p-2 md:p-4 rounded-2xl shadow-xl hover-card overflow-hidden">
+                    <img src="Bilder/Speisekarten/Speisekarte.png" alt="Vollständige Speisekarte von Mone's Café Herzlich" class="w-full h-auto rounded-xl">
+                </div>
+            </div>
+
+            <!-- Download / Call to Action -->
+            <div class="text-center mt-12 reveal-on-scroll">
+                <p class="text-gray-500 italic mb-4 text-sm">*Vegetarische Optionen verfügbar</p>
+                <a href="#contact" class="inline-block border-b-2 border-coffee-dark text-coffee-dark font-bold hover:text-accent-gold hover:border-accent-gold transition-colors pb-1">
+                    Tisch reservieren &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie / Ambiente -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 reveal-on-scroll">
+                <span class="text-accent-gold font-bold tracking-wider uppercase text-sm">Einblicke</span>
+                <h2 class="font-serif text-4xl text-coffee-dark font-bold">Unser Ambiente</h2>
+            </div>
+            
+            <!-- Masonry-style Layout -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                <!-- Large item -->
+                <div class="col-span-2 row-span-2 rounded-xl overflow-hidden shadow-lg relative group cursor-pointer reveal-on-scroll">
+                    <img src="Bilder/Ambiente/Ambiente1.png" alt="Cafe Innenraum" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                    </div>
+                </div>
+                <!-- Standard items -->
+                <div class="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-lg relative group cursor-pointer reveal-on-scroll">
+                    <img src="Bilder/Ambiente/Ambiente2.png" alt="Kaffee Latte Art" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-lg relative group cursor-pointer reveal-on-scroll">
+                    <img src="Bilder/Ambiente/Ambiente3.png" alt="Kuchentheke" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-lg relative group cursor-pointer reveal-on-scroll">
+                    <img src="Bilder/Ambiente/Ambiente4.png" alt="Aussenbereich" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-lg relative group cursor-pointer reveal-on-scroll">
+                    <img src="Bilder/Ambiente/Ambiente5.png" alt="Details" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>^
+
+    <!-- NEW SECTION: Ausstattung & Service -->
+    <section id="amenities" class="py-20 bg-cream-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal-on-scroll">
+                <span class="text-accent-gold font-bold tracking-wider uppercase text-sm">Komfort für alle</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-coffee-dark font-bold">Ausstattung & Service</h2>
+                <div class="h-1 w-24 bg-accent-gold mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Barrierefreiheit -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-b-4 border-accent-gold hover-card reveal-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cream-light rounded-full flex items-center justify-center text-coffee-dark mr-4">
+                            <i class="fas fa-wheelchair text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-coffee-dark">Barrierefreiheit</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Rollstuhlgerechter Eingang</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Rollstuhlgerechtes WC</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Barrierefreie Sitzplätze</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Behindertenparkplatz</li>
+                    </ul>
+                </div>
+
+                <!-- Service & Komfort -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-b-4 border-coffee-med hover-card reveal-on-scroll" style="transition-delay: 100ms;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cream-light rounded-full flex items-center justify-center text-coffee-dark mr-4">
+                            <i class="fas fa-wifi text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-coffee-dark">Service & Komfort</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Kostenloses WLAN</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Laptop-Arbeitsplätze</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Bedienung am Tisch</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Hunde herzlich willkommen</li>
+                    </ul>
+                </div>
+
+                <!-- Parken & Extras -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-b-4 border-coffee-dark hover-card reveal-on-scroll" style="transition-delay: 200ms;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cream-light rounded-full flex items-center justify-center text-coffee-dark mr-4">
+                            <i class="fas fa-car text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-coffee-dark">Parken & Extras</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Kostenlose Parkplätze</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Gute Parkmöglichkeiten (Straße)</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Reservierungen möglich</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-gold mt-1 mr-2 text-xs"></i> Bier & Alkohol verfügbar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rezensionen (Social Proof) -->
+    <section id="reviews" class="py-20 bg-coffee-dark text-white relative">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 reveal-on-scroll">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">Was unsere Gäste sagen</h2>
+                <div class="flex justify-center text-accent-gold text-xl mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="text-gray-300">Basierend auf über 400 Google Bewertungen</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 reveal-on-scroll">
+                    <i class="fas fa-quote-left text-accent-gold text-2xl mb-4"></i>
+                    <p class="text-gray-100 italic mb-4">"Ein so liebevoll eingerichtetes Café mit unglaublich freundlichem Personal. Das Frühstück war reichhaltig und sehr lecker. Wir kommen definitiv wieder!"</p>
+                    <p class="font-bold text-accent-gold">– Sabine M.</p>
+                </div>
+                 <!-- Review 2 -->
+                 <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 reveal-on-scroll" style="transition-delay: 100ms;">
+                    <i class="fas fa-quote-left text-accent-gold text-2xl mb-4"></i>
+                    <p class="text-gray-100 italic mb-4">"Der beste Kuchen in Rheindalen! Man schmeckt, dass hier noch selbst gebacken wird. Sehr gemütliche Atmosphäre."</p>
+                    <p class="font-bold text-accent-gold">– Thomas K.</p>
+                </div>
+                 <!-- Review 3 -->
+                 <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 reveal-on-scroll" style="transition-delay: 200ms;">
+                    <i class="fas fa-quote-left text-accent-gold text-2xl mb-4"></i>
+                    <p class="text-gray-100 italic mb-4">"Perfekt für eine Auszeit. Herzlicher Service und toller Kaffee. Am Wochenende sollte man reservieren, da es sehr beliebt ist."</p>
+                    <p class="font-bold text-accent-gold">– Julia W.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt & Standort -->
+    <section id="contact" class="py-20 bg-cream-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                
+                <!-- Info Side -->
+                <div class="w-full md:w-1/2 p-10 md:p-12 space-y-8 reveal-on-scroll">
+                    <h2 class="font-serif text-3xl font-bold text-coffee-dark">Wir freuen uns auf Sie!</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-cream-light p-3 rounded-full text-coffee-dark">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-coffee-dark">Adresse</h4>
+                                <p class="text-gray-600">Plektrudisstraße 4<br>41179 Mönchengladbach (Rheindalen)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-cream-light p-3 rounded-full text-coffee-dark">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-coffee-dark">Telefon</h4>
+                                <a href="tel:+4921612997088" class="text-accent-gold font-bold hover:underline">+49 2161 2997088</a>
+                                <p class="text-xs text-gray-400 mt-1">Für Reservierungen & Bestellungen</p>
+                            </div>
+                        </div>
+                        
+                         <div class="flex items-start gap-4">
+                            <div class="bg-cream-light p-3 rounded-full text-coffee-dark">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-coffee-dark">E-Mail</h4>
+                                <a href="mailto:info@mones-cafe-herzlich.de" class="text-gray-600 hover:text-accent-gold">info@mones-cafe-herzlich.de</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-6">
+                        <h4 class="font-bold text-coffee-dark mb-3"><i class="far fa-clock mr-2"></i> Öffnungszeiten</h4>
+                        <table class="w-full text-gray-600 text-sm">
+                            <tr class="border-b border-gray-50">
+                                <td class="py-1">Di - Fr</td>
+                                <td class="py-1 text-right font-medium">09:00 – 17:00</td>
+                            </tr>
+                            <tr class="border-b border-gray-50">
+                                <td class="py-1">Samstag</td>
+                                <td class="py-1 text-right font-medium">09:00 – 13:00</td>
+                            </tr>
+                            <tr class="border-b border-gray-50">
+                                <td class="py-1">Sonntag</td>
+                                <td class="py-1 text-right font-medium">10:00 – 17:00</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1">Montag</td>
+                                <td class="py-1 text-right italic">Geschlossen (Ruhetag)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="bg-orange-50 border-l-4 border-accent-gold p-4 mt-4">
+                        <p class="text-sm text-coffee-dark">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            <strong>Hinweis:</strong> Kartenzahlung ist nicht immer möglich. Bitte bringen Sie Bargeld mit. Danke für Ihr Verständnis!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Map Side -->
+                <div class="w-full md:w-1/2 min-h-[400px] bg-gray-200 relative">
+                    <!-- Placeholder Map Image with Link (GDPR friendly) or iFrame -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.270928045763!2d6.3617112!3d51.1804104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8ac0f6b8b0e5d%3A0x123456789abcdef!2sPlektrudisstra%C3%9Fe%204%2C%2041179%20M%C3%B6nchengladbach!5e0!3m2!1sde!2sde!4v1620000000000!5m2!1sde!2sde" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Standort Mone's Café Herzlich">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-coffee-dark text-white pt-16 pb-8 border-t border-coffee-med">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <h3 class="font-serif text-2xl font-bold">Mone’s Café Herzlich</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Ihr gemütliches Café im Herzen von Rheindalen. Genießen Sie hausgemachte Kuchen, leckeres Frühstück und herzliche Gastfreundschaft.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-accent-gold font-bold mb-4 uppercase tracking-wider text-sm">Navigation</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#about" class="hover:text-white transition-colors">Über Uns</a></li>
+                        <li><a href="#menu" class="hover:text-white transition-colors">Speisekarte</a></li>
+                        <li><a href="#reviews" class="hover:text-white transition-colors">Bewertungen</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Kontakt & Anfahrt</a></li>
+                    </ul>
+                </div>
+
+                <!-- Local SEO Tags block (Visual only) -->
+                <div>
+                    <h4 class="text-accent-gold font-bold mb-4 uppercase tracking-wider text-sm">Standort</h4>
+                    <p class="text-gray-300 text-sm mb-2">Mönchengladbach Rheindalen</p>
+                    <p class="text-gray-300 text-sm mb-2">Plektrudisstraße 4</p>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-coffee-med flex items-center justify-center hover:bg-accent-gold transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-coffee-med flex items-center justify-center hover:bg-accent-gold transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-coffee-med pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2024 Mone’s Café Herzlich. Alle Rechte vorbehalten.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Impressum</a>
+                    <a href="#" class="hover:text-white">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+            });
+        });
+
+        // Sticky Navbar Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('h-20', 'h-16');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('h-16', 'h-20');
+            }
+        });
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
